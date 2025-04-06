@@ -1,0 +1,40 @@
+*{
+    color: rgb(0, 136, 255);
+    
+}
+
+
+header .navbar {
+    background: linear-gradient(90deg, #000000, #0b072f, #1b2046);
+    color: rgb(17, 129, 154);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar .tittle {
+    font-size: 25px;
+    color: rgb(0, 136, 255);
+    font-weight: bold;
+    margin-left: 20px;
+}
+.navbar img {
+    width: 80px;
+    height: 60px;
+    padding: 10px;
+    margin-left: 10px;
+    
+}
+.navbar .list-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-left: 200px;
+    gap: 30px;
+}
+
+
+
