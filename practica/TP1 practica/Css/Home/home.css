@@ -1,23 +1,25 @@
 main  {
     background-image: url(/assets/img/futurista.jpg);
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.3); 
     background-blend-mode: overlay;
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
+    height: 100%;
+    width: 100%;
     text-align: center;
-    position: relative;
 }
 
+
 #Presentacion {
-    height: 400px; 
+    height: 200px; 
     align-items: center;
-    margin-top: 250px;
+    margin-top: 245px;
     font-size: 35px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1); 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.204); 
+    margin-bottom: 60px;
 }
+
+
 
 
 
