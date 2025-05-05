@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #texto {
+            width: 500px;
+            height: 300px;
+            border: 2px solid #000000;
+            font-size: 25px;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <textarea id="texto">Aqui va el texto</textarea>
+    </form>
+    <button id="negrita">N</button>
+    <button id="cursiva">C</button>
+    <button id="subrayado">S</button>
+    <input type="color" id="color">
+    <label for="number">Tamañano de la fuente</label>
+    <input type="number" id="tamañoFuente" placeholder="10px">
+    <select  id="opcionTipografia">
+
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select>
+
+    <script>
+
+        const texto = document.getElementById('texto');
+
+        const negrita = document.getElementById('negrita');
+        negrita.addEventListener('click', cambiarNegrita);
+        function cambiarNegrita(){
+            if(texto.style.fontWeight === 'bold'){
+                texto.style.fontWeight = 'normal';
+            }else{
+            texto.style.fontWeight = 'bold';
+            }
+        }
+
+
+
+        const cursiva = document.getElementById('cursiva');
+        cursiva.addEventListener('click', cambiarCursiva);
+        function cambiarCursiva(){
+            if(texto.style.fontStyle === 'italic'){
+                texto.style.fontStyle = 'normal';
+            }else{
+            texto.style.fontStyle = 'italic';
+            }
+        }
+
+
+        const subrayado = document.getElementById('subrayado');
+        subrayado.addEventListener('click', cambiarSubrayado);
+        function cambiarSubrayado(){
+            if(texto.style.textDecoration === 'underline'){
+                texto.style.textDecoration = 'none';
+            }else{
+            texto.style.textDecoration = 'underline';
+            }
+        }
+
+        const color = document.getElementById('color');
+        color.addEventListener('input', cambiarColor);
+        function cambiarColor(){
+            texto.style.color = color.value;
+        }
+
+        const tamañoFuente = document.getElementById('tamañoFuente');
+        tamañoFuente.addEventListener('input', cambiarTamañoFuente);
+        function cambiarTamañoFuente(){
+            texto.style.fontSize = tamañoFuente.value + 'px';
+        }
+
+        const opcionTipografia = document.getElementById('opcionTipografia');
+        opcionTipografia.addEventListener('input', cambiarTipografia);
+        function cambiarTipografia(){
+            texto.style.fontFamily = opcionTipografia.value;
+        }
+    </script>
+</body>
+</html>
