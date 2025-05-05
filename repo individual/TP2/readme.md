@@ -1,1 +1,0 @@
-# practico 2
