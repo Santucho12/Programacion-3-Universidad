@@ -1,22 +1,24 @@
 const express = require('express');
+const { multiplicar } = require('./matematica');
 
-// Import required modules
-
-// Initialize the app
+// Inicializar la app
 const app = express();
 
-// Set the port
+// Configurar el puerto
 const PORT = 3000;
 
-// Middleware to parse JSON
+// Middleware para parsear JSON
 app.use(express.json());
 
-// Basic route
+// Ruta básica
 app.get('/', (req, res) => {
     res.send('¡Hola, mundo!');
 });
 
-// Start the server
+// Mostrar el resultado de la multiplicación
+console.log(multiplicar(6, 52));
+
+// Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
