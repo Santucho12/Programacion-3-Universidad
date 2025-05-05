@@ -1,2 +1,2 @@
 const {multiplicar} = require('./matematica');
-console.log(multiplicar(6,532));   
+console.log(multiplicar(6,52));   
