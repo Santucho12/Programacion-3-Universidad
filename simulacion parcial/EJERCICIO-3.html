@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .contador {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="contador">
+        <h1>Contador</h1>
+        <h2 id="numero">0</h2>
+        <div>
+            <button id="sumar">Sumar</button>
+            <button id="restar">Restar</button>
+            <button id="reiniciar">Reiniciar</button>
+        </div>
+    </div>
+
+    <script>
+const sumar = document.getElementById('sumar');
+const restar = document.getElementById('restar');
+const reiniciar = document.getElementById('reiniciar');
+const numero = document.getElementById('numero');
+
+let contador = 0;
+
+function sumarcontador() {
+    contador++;
+    numero.textContent = contador;
+}
+
+function restarcontador() {
+    contador--;
+    numero.textContent = contador;
+}
+
+function reiniciarcontador() {
+    contador = 0;
+    numero.textContent = contador;
+}
+
+
+
+sumar.addEventListener('click', sumarcontador);
+restar.addEventListener('click', restarcontador);
+reiniciar.addEventListener('click', reiniciarcontador);
+
+    
+
+        
+    </script>
+</body>
+</html>

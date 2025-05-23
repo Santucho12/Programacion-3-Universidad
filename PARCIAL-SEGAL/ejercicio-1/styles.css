@@ -1,0 +1,52 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    background-color: #e8e8e8;
+    padding: 10px;
+}
+
+.menu-li {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.menu-li:hover {
+    background-color: #c9c9c9;
+    transform: scale(1.1);
+    transition:  0.3s ease;
+}
+
+.tarjeta-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.tarjeta {
+    border: 2px solid #9f9f9f;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+
+.menu {
+flex-direction: column;
+}
+.menu-li {
+margin-right: 0;
+margin-bottom: 10px;
+}
+.tarjeta{
+height: 100px;
+}
+.tarjeta-contenedor {
+grid-template-columns: 1fr;
+}
+}

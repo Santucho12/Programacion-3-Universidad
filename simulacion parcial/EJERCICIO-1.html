@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: 1s;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(255, 255, 255);
+        }
+        button:hover {
+            transition: 1s;
+            scale: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <button id="cambiarColor">Cambiar color</button>
+
+    <script>
+        const boton = document.getElementById('cambiarColor');
+        const listaColores = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink'];
+
+        boton.addEventListener('click', cambiarColor);
+        function cambiarColor() {
+            const colorRandom = listaColores[Math.floor(Math.random() * listaColores.length)];
+            document.body.style.backgroundColor = colorRandom;
+            
+           // setInterval(cambiarColor, 1000);
+        }
+
+
+    </script>
+</body>
+</html>

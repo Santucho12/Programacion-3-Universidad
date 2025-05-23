@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" id="nombre">
+        <button id="enviar">enviar</button>
+        <p id="error"></p>
+    </form>
+
+
+<script>
+const nombre = document.getElementById('nombre');
+const boton = document.getElementById('enviar');
+const error = document.getElementById('error');
+
+boton.addEventListener('click',verificar);
+function verificar(event){
+    event.preventDefault();
+
+
+
+    if(nombre.value==""){
+        error.textContent = "El campo no puede estar vacio";
+        error.style.color = "red";
+    }else{
+        alert("enviado correctamente")
+    }
+}
+
+
+</script>
+
+</body>
+</html>
