@@ -2,7 +2,7 @@ const {
   getTurnosByPacienteId,
   deleteTurnoById,
   createTurno
-} = require('../../models/turno.model.js');
+} = require('../../models/sqlite/turno.model.js');
 
 const listByPaciente = async (req, res) => {
   const { idPaciente } = req.params;

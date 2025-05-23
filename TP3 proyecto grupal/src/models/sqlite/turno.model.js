@@ -1,4 +1,4 @@
-const { Turno } = require('../models/sqlite/entities/turno.entity.js');
+const { Turno } = require('../sqlite/entities/turno.entity.js');
 
 const getTurnosByPacienteId = async (idPaciente) => {
   return await Turno.findAll({ where: { pacienteId: idPaciente } });
