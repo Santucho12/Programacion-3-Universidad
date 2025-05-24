@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santozzi/practico3progra3.git"
+    "url": "git+https://github.com/Santucho12/Programacion-3-Universidad.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Santiago ",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/santozzi/practico3progra3/issues"
+    "url": "https://github.com/Santucho12/Programacion-3-Universidad/issues"
   },
-  "homepage": "https://github.com/santozzi/practico3progra3#readme",
+  "homepage": "https://github.com/Santucho12/Programacion-3-Universidad#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",

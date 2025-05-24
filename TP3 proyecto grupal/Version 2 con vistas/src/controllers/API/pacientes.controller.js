@@ -15,17 +15,25 @@ class PacientesController {
   }
 
   async create(req, res) {
-    try {
-      const { dni, nombre, apellido, email } = req.body;
-      const nuevo = await pacientesModel.createPaciente({ dni, nombre, apellido, email });
-      res.status(201).json(nuevo);
-    } catch (error) {
-      if (error.name === 'SequelizeUniqueConstraintError') {
-        return res.status(400).json({ error: `El dni '${req.body.dni}' ya está registrado.` });
-      }
-      res.status(400).json({ error: error.message });
+  try {
+    const { dni, nombre, apellido, email } = req.body;
+
+    // Regex simple para validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: 'El formato del email es inválido.' });
     }
+
+    const nuevo = await pacientesModel.createPaciente({ dni, nombre, apellido, email });
+    res.status(201).json(nuevo);
+  } catch (error) {
+    if (error.name === 'SequelizeUniqueConstraintError') {
+      return res.status(400).json({ error: `El dni '${req.body.dni}' ya está registrado.` });
+    }
+    res.status(400).json({ error: error.message });
   }
+}
+
 
   async delete(req, res) {
     try {
