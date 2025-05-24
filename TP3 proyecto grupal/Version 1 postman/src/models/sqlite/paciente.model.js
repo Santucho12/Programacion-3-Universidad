@@ -1,7 +1,6 @@
-
 const { Paciente } = require('../sqlite/entities/paciente.entity.js');
 
-// Obtener todos los pacientes
+
 async function getPacientesModel() {
   try {
     const pacientes = await Paciente.findAll();
@@ -12,12 +11,11 @@ async function getPacientesModel() {
   }
 }
 
-// Crear paciente
 async function crearPacienteModel({ dni, nombre, apellido, email }) {
-  try {
+  try {                          //uso de los metodos del orm
     const existe = await Paciente.findOne({ where: { dni } });
     if (existe) throw new Error('El paciente ya existe');
-
+                            //uso de los metodos del orm
     const nuevoPaciente = await Paciente.create({ dni, nombre, apellido, email });
     return nuevoPaciente;
   } catch (error) {
@@ -25,7 +23,6 @@ async function crearPacienteModel({ dni, nombre, apellido, email }) {
   }
 }
 
-// Borrar paciente por id
 async function borrarPacienteModel(id) {
   try {
     const paciente = await Paciente.findByPk(id);
@@ -38,7 +35,6 @@ async function borrarPacienteModel(id) {
   }
 }
 
-// Modificar paciente por id
 async function modificarPacienteModel(id, { dni, nombre, apellido, email }) {
   try {
     const paciente = await Paciente.findByPk(id);
@@ -56,9 +52,5 @@ async function modificarPacienteModel(id, { dni, nombre, apellido, email }) {
   }
 }
 
-module.exports = {
-  getPacientesModel,
-  crearPacienteModel,
-  borrarPacienteModel,
-  modificarPacienteModel
+module.exports = {getPacientesModel,crearPacienteModel,borrarPacienteModel,modificarPacienteModel
 };

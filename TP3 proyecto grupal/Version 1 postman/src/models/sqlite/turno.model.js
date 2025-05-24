@@ -34,8 +34,5 @@ async function crearTurnoModel({ fecha, hora, motivo, pacienteId }) {
   }
 }
 
-module.exports = {
-  getTurnosPacienteModel,
-  borrarTurnoModel,
-  crearTurnoModel
+module.exports = {getTurnosPacienteModel,borrarTurnoModel,crearTurnoModel
 };
