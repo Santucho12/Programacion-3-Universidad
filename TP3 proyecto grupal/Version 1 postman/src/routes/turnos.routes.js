@@ -5,9 +5,9 @@ const turnosController = require('../controllers/API/turnos.controller.js');
 const rutaTurnos = Router();
 
 
-rutaTurnos.get('/:idPaciente', verifyTokenMiddleware, turnosController.listarTurnos);
-rutaTurnos.delete('/:idTurno', verifyTokenMiddleware, turnosController.deleteTurno);
-rutaTurnos.post('/', verifyTokenMiddleware, turnosController.createTurno);
+rutaTurnos.get('/:idPaciente', verifyTokenMiddleware, turnosController.getTurnos);
+rutaTurnos.delete('/:idTurno', verifyTokenMiddleware, turnosController.borrarTurno);
+rutaTurnos.post('/', verifyTokenMiddleware, turnosController.crearTurno);
 
 
 module.exports = rutaTurnos;

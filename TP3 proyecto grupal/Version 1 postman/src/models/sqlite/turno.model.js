@@ -1,6 +1,6 @@
 const { Turno } = require('../sqlite/entities/turno.entity.js');
 
-async function getTurnosPaciente(idPaciente) {
+async function getTurnosPacienteModel(idPaciente) {
   try {
     const turnos = await Turno.findAll({ where: { pacienteId: idPaciente } });
     if (turnos.length === 0) throw new Error('No hay turnos para ese paciente');
@@ -10,7 +10,7 @@ async function getTurnosPaciente(idPaciente) {
   }
 }
 
-async function deleteTurno(idTurno) {
+async function borrarTurnoModel(idTurno) {
   try {
     const turno = await Turno.findByPk(idTurno);
     if (!turno) throw new Error('Turno no encontrado');
@@ -21,7 +21,7 @@ async function deleteTurno(idTurno) {
   }
 }
 
-async function createTurno({ fecha, hora, motivo, pacienteId }) {
+async function crearTurnoModel({ fecha, hora, motivo, pacienteId }) {
   try {
     if (!fecha || !hora || !motivo || !pacienteId) {
       throw new Error('Faltan datos obligatorios: fecha, hora, motivo y pacienteId');
@@ -35,7 +35,7 @@ async function createTurno({ fecha, hora, motivo, pacienteId }) {
 }
 
 module.exports = {
-  getTurnosPaciente,
-  deleteTurno,
-  createTurno
+  getTurnosPacienteModel,
+  borrarTurnoModel,
+  crearTurnoModel
 };

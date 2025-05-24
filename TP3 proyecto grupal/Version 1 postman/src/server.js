@@ -1,5 +1,5 @@
-const  express = require('express');
-const  dotenv = require('dotenv');
+const express = require('express');
+const dotenv = require('dotenv');
 const rutaPacientes = require('./routes/pacientes.route.js')
 const home = require('./routes/home.routes.js');
 const rutaTurnos = require('./routes/turnos.routes.js');
